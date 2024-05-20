@@ -585,21 +585,26 @@
         });
     });
 		$(document).ready(function(){
-  $('.home-slider.owl-carousel').owlCarousel({
-    items: 1,
-    loop: true,
-    margin: 0,
-    nav: true,
-    dots: true,
-    autoplay: true,
-    autoplayTimeout: 5000,
-    autoplayHoverPause: false,
-    animateOut: 'fadeOut',
-    animateIn: 'fadeIn',
-    touchDrag: false, // Desactiva el deslizamiento táctil
-    mouseDrag: false  // Desactiva el deslizamiento con el ratón
+			$('.home-slider.owl-carousel').owlCarousel({
+				items: 1,
+				loop: true,
+				margin: 0,
+				nav: true,
+				dots: true,
+				autoplay: true,
+				autoplayTimeout: 5000,
+				autoplayHoverPause: false,
+				animateOut: 'fadeOut',
+				animateIn: 'fadeIn',
+				touchDrag: false, // Desactiva el deslizamiento táctil
+				mouseDrag: false  // Desactiva el deslizamiento con el ratón
+			});
+		});
+
+  // Prevenir el comportamiento táctil adicional
+  $('.home-slider').on('touchstart touchmove', function(event) {
+    event.preventDefault(); // Prevenir el deslizamiento táctil
   });
-});
 
 				
 	</script>
