@@ -584,34 +584,22 @@
             $(".navbar-collapse").collapse('hide');
         });
     });
-		$(document).ready(function() {
-            $('.home-slider').owlCarousel({
-                items: 1,
-                loop: true,
-                autoplay: true,
-                autoplayTimeout: 5000,
-                nav: false,
-                dots: true,
-                touchDrag: true,
-                mouseDrag: false, // Deshabilitar el arrastre con el mouse
-            });
+		$(document).ready(function(){
+  $('.home-slider.owl-carousel').owlCarousel({
+    items: 1,
+    loop: true,
+    margin: 0,
+    nav: true,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    autoplayHoverPause: false,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    touchDrag: false // Esta es la opción que desactiva el uso táctil
+  });
+});
 
-            // Prevenir bloqueo de desplazamiento vertical
-            $('.home-slider').on('touchstart', function(event) {
-                var startY = event.originalEvent.touches[0].clientY;
-                $(this).on('touchmove', function(event) {
-                    var moveY = event.originalEvent.touches[0].clientY;
-                    if (Math.abs(moveY - startY) > 10) {
-                        event.stopPropagation();
-                    }
-                });
-            });
-
-            // Permitir el desplazamiento en dispositivos móviles
-            $('.home-slider').on('touchend', function(event) {
-                $(this).off('touchmove');
-            });
-        });
 				
 	</script>
 
