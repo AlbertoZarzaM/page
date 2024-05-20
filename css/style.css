@@ -8459,7 +8459,7 @@ h1, h2, h3, h4, h5,
         position: relative;
         height: 750px;
         z-index: 0;
-        touch-action: pan-y; /* Permite la acción táctil vertical */
+        touch-action: pan-y !important; /* Permite la acción táctil vertical */
       }
       .owl-carousel.home-slider .slider-item {
         background-size: cover;
