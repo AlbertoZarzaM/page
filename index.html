@@ -56,7 +56,8 @@
                 <div class="container">
                     <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
                         data-scrollax-parent="true">
-                        <div class="one-third js-fullheight order-md-last img" style="background-size: cover; background-position: right; display: flex; justify-content: right; align-items: center;">
+                        <div class="one-third js-fullheight order-md-last img"
+                            style="background-size: cover; background-position: right; display: flex; justify-content: right; align-items: center;">
                             <img src="images/self.png" alt="Self Image" style="max-width: 60%; max-height: 50%;">
                             <div class="overlay"></div>
                         </div>
@@ -79,7 +80,8 @@
                 <div class="container">
                     <div class="row d-flex no-gutters slider-text align-items-end justify-content-end"
                         data-scrollax-parent="true">
-                        <div class="one-third js-fullheight order-md-last img" style="background-size: cover; background-position: center; display: flex; justify-content: right; align-items: center;">
+                        <div class="one-third js-fullheight order-md-last img"
+                            style="background-size: cover; background-position: center; display: flex; justify-content: right; align-items: center;">
                             <img src="images/self.png" alt="Self Image" style="max-width: 60%; max-height: 50%;">
                             <div class="overlay"></div>
                         </div>
@@ -602,6 +604,30 @@
             $(".navbar-collapse").collapse('hide');
         });
     });
+		$(document).ready(function() {
+            $('.home-slider').owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                nav: false,
+                dots: true,
+                touchDrag: true,
+                mouseDrag: false, // Disabling mouse drag
+            });
+
+            // Fix to prevent scroll lock issue
+            $('.home-slider').on('touchstart', function(event) {
+                var yClick = event.originalEvent.touches[0].clientY;
+                $(this).one('touchmove', function(event) {
+                    var yMove = event.originalEvent.touches[0].clientY;
+                    var yDistance = yMove - yClick;
+                    if (Math.abs(yDistance) > 10) {
+                        event.stopPropagation();
+                    }
+                });
+            });
+        });
 	</script>
 
 	<script src="js/main.js"></script>
