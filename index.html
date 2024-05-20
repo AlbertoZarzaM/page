@@ -38,6 +38,8 @@
         </div>
     </nav>
 
+		
+
     <section id="home-section" class="hero">
         <div class="home-slider owl-carousel">
             <div class="slider-item">
@@ -584,20 +586,34 @@
             $(".navbar-collapse").collapse('hide');
         });
     });
-		$(document).ready(function(){
-    $('.home-slider').owlCarousel({
-        items: 1,
-        loop: true,
-        margin: 0,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        autoplayHoverPause: true,
-        nav: false,
-        dots: true,
-        touchDrag: true, // Habilitar deslizamiento táctil
-        mouseDrag: true // Habilitar deslizamiento con el ratón
-    });
-});
+		$('.home-slider').owlCarousel({
+    loop:true,
+    autoplay: true,
+    margin:0,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    nav:false,
+    autoplayHoverPause: false,
+    items: 1,
+    navText : ["<span class='ion-md-arrow-back'></span>","<span class='ion-chevron-right'></span>"],
+        mouseDrag: true,
+        touchDrag: false,
+        responsive: {
+          0: {
+            items: 1,
+            mouseDrag: false,
+            touchDrag: true
+          },
+          600: {
+            items: 1,
+            mouseDrag: false,
+            touchDrag: true
+          },
+          1000: {
+            items: 1
+          }
+        }
+      });
 
 				
 	</script>
